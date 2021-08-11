@@ -1,0 +1,1 @@
+export const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PK || 'pk_test_51JMcg8SBXctkc98UYVzVSG9hDDbteYVjNybvB2A6VAwlLybbw4PAwK2Q43opyW8JzvIH4lhZKwuIYutghV6oCQXG00rc1T5FQh'

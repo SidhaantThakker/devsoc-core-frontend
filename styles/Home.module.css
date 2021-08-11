@@ -1,0 +1,29 @@
+.dish{
+  margin: 10px
+}
+
+.dishBox{
+  display: flex;
+  border: 1px solid black;
+  width: 50vw;
+  margin: auto;
+}
+
+.dishImage{
+  max-width: 15vw;
+  margin: 2vw;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.dishInfo{
+  margin: auto;
+  font-size: 2vh;
+  text-align: center;
+}
+
+.inputBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

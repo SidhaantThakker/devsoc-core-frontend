@@ -1,0 +1,1 @@
+export const magic_pub_key = process.env.NEXT_PUBLIC_MAGIC_PUBLIC_KEY || 'pk_live_0EB1E96728AFC9F9'
