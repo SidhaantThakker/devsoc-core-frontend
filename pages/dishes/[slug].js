@@ -3,14 +3,17 @@ import { currencyFormat } from '../../utils/currencyFormat'
 import { api_url } from '../../utils/getApiUrl'
 import Head from 'next/head'
 import BuyButton from '../../components/BuyButton'
+import styles from '../../styles/Dish.module.css'
 
 const Dish = ({dish}) => {
     return (
-        <div>
+        <div className={styles.dishPage}>
             <Head>
                 <title>{dish.name}</title>
             </Head>
-            <img src={getUrl(dish.image)} />
+            <div>
+                <img src={getUrl(dish.image)} />
+            </div>
             <h3>{dish.name}</h3>
             <h5>{currencyFormat(dish.price)}</h5>
             <p>{dish.description}</p>

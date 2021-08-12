@@ -1,0 +1,10 @@
+.dishPage img{
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.dishPage{
+    font-size: 1.5rem;
+    padding: 2rem;
+}

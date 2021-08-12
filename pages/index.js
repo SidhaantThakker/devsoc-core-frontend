@@ -12,12 +12,13 @@ export default function Home({ dishes }) {
   const [searchCuisine, setSearchCuisine] = useState('')
   const [searchType, setSearchType] = useState('')
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.inputBox}>
         <input type="text" placeholder="Search By Name" onChange={event => {setSearchName(event.target.value)}} />
         <input type="text" placeholder="Search By Cuisine" onChange={event => {setSearchCuisine(event.target.value)}} />
         <input type="text" placeholder="Search By Type" onChange={event => {setSearchType(event.target.value)}} />
       </div>
+      <div className={styles.dishes}>
       {dishes.filter((dish) => {
         let nameFlag = 0;
         let cuisineFlag = 0;
@@ -41,12 +42,13 @@ export default function Home({ dishes }) {
             <a>
             <div className={styles.dishBox}>
               <div className={styles.dishImage}><img src={getUrl(dish.image)}></img></div>
-              <div className={styles.dishInfo}>{dish.name} <br></br> {currencyFormat(dish.price)}</div>
+              <div className={styles.dishInfo}>{dish.name}</div><div className={styles.currency}>{currencyFormat(dish.price)}</div>
             </div>
             </a>
           </Link>
         </div>
       ))}
+      </div>
     </div>
   )
 }

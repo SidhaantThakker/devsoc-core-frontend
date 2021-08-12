@@ -1,4 +1,17 @@
 .buy{
-    background-color: black;
-    color: white
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    gap: .6rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: background-color 500ms ease;
+}
+
+.buy:hover{
+    background-color: rgb(104, 211, 121);
 }

@@ -39,13 +39,12 @@ export default function Success(){
     const { order, loading } = useOrder(session_id)
 
     return (
-        <div>
+        <div className={"padding"}>
             <Head>
                 <title>Success!</title>
             </Head>
-            <h1>Your payment was successful! Your food should arrive shortly!</h1>
+            <h1 >Your payment was successful! Your food should arrive shortly!</h1>
             {loading && <p>Loading...</p>}
-            {order && <p>Order placed with Order ID: {order.id}</p>}
         </div>
     )
 }

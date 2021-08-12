@@ -52,7 +52,7 @@ const Account = () => {
     }
     
     return (
-        <div>
+        <div className={"accountInfo"}>
             <Head>
                 <title>Account Page</title>
             </Head>

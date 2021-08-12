@@ -14,7 +14,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className={styles.loginInfo}>
             <Head>
                 <title>Login</title>
             </Head>

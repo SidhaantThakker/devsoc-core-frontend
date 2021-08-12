@@ -21,7 +21,7 @@ const Header = () => {
     <div className={styles.nav}>
         { !(router.pathname === '/') && 
             <div className={styles.back}>
-                <a href="#" onClick={goBack}>Back</a>
+                <a href="#" onClick={goBack}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg></a>
             </div>
         }
         <div className={styles.title}>
@@ -35,13 +35,18 @@ const Header = () => {
         </div>
         <div className={styles.auth}>
             {user? (
+                <div className={styles.login}>
                 <Link href="/account">
                     <a>{user.email}</a>
                 </Link>
+                </div>
             ) : (
-                <Link href="/login">
-                    <a>Log in</a>
-                </Link>
+                <div className={styles.login}>
+                    <Link href="/login">
+                        <a>Log in</a>
+                    </Link>
+                </div>
+               
             )
 
             }
