@@ -63,7 +63,7 @@ const Account = () => {
             {
                 orders.map(order => (
                     <div key={order.id}>
-                        {new Date(order.created_at).toLocaleDateString('en-GB')} {order.dish.name} {currencyFormat(order.total)} {order.status}
+                        {new Date(order.created_at).toLocaleDateString('en-GB')} {order.dish.name} {currencyFormat(order.total)}
                     </div>
                 ))
             }
