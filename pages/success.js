@@ -5,11 +5,9 @@ import { api_url } from "../utils/getApiUrl"
 
 const useOrder = (session_id) => {
     const [order, setOrder] = useState(null)
-    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const fetchOrder = async () => {
-            setLoading(true)
             try{
                 const res = await fetch(`${api_url}/orders/confirm`, {
                     method: `POST`,
@@ -23,12 +21,11 @@ const useOrder = (session_id) => {
             } catch(err) {
                 setOrder(null)
             }
-            setLoading(false)
         }
         fetchOrder()
     }, [session_id])
 
-    return {order, loading}
+    return {order}
 }
 
 export default function Success(){
@@ -36,7 +33,12 @@ export default function Success(){
     const router = useRouter()
     const { session_id } = router.query
 
-    const { order, loading } = useOrder(session_id)
+    const { order } = useOrder(session_id)
+
+    const goToHome = (event) => {
+        event.preventDefault()
+        router.push("/")
+    }
 
     return (
         <div className={"padding"}>
@@ -44,7 +46,7 @@ export default function Success(){
                 <title>Success!</title>
             </Head>
             <h1 >Your payment was successful! Your food should arrive shortly!</h1>
-            {loading && <p>Loading...</p>}
+            <a href="#" onClick={goToHome} className={"backHome"}>Back to Home</a>
         </div>
     )
 }

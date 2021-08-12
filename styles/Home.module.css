@@ -46,7 +46,9 @@
   font-size: 1.2rem;
 }
 
-
+.heading{
+  align-self: center;
+}
 
 @media screen and (min-width: 900px) {
 

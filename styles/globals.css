@@ -28,14 +28,14 @@ footer {
   border-top: 1px solid rgba(233, 233, 233, 0.507);
 }
 
-input{
+input, select{
   color: white;
   font-weight: 600;
   font-size: .9rem;
   padding: .7rem;
   border-radius: 10px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.438);
+  background-color: rgba(0, 0, 0, 0.438);
   backdrop-filter: blur(100px)
 }
 
@@ -56,4 +56,10 @@ input{
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.backHome{
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
 }

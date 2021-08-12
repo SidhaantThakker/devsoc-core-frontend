@@ -18,19 +18,22 @@ const Login = () => {
             <Head>
                 <title>Login</title>
             </Head>
-
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input 
-                type="email" 
-                value={email} 
-                onChange={(event)=>{
-                    setEmail(event.target.value)
-                }}
-                placeholder="Your Email Address"
-                className={styles.input}/>
-                <button type="submit">Login</button>
-            </form>
+            <div className={styles.loginBox}>
+                <h1 className={styles.loginTitle}>Login</h1> 
+                <hr className={styles.hr}></hr>
+                <form onSubmit={handleSubmit}>
+                    <input
+                    type="email" 
+                    value={email} 
+                    onChange={(event)=>{
+                        setEmail(event.target.value)
+                    }}
+                    placeholder="Your Email Address"
+                    className={styles.inputBox}/>
+                    <br></br>
+                    <button type="submit" className={styles.loginButton}>Login</button>
+                </form>
+            </div>
         </div>
     )
 }

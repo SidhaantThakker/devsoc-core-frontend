@@ -1,5 +1,33 @@
-.loginInfo{
-    display: flex;
-    gap: 1rem;
-    padding: 2rem;
+.hr{
+    margin-top: 2vh;
+    color: whitesmoke;
+}
+
+.inputBox{
+    width: 50vw;
+    padding: 2vh;
+    margin-top: 3vh;
+    text-align: center;
+}
+
+.loginButton{
+    border: 2px solid white;
+    color: white;
+    font-size: 3vh;
+    background-color: transparent;
+    padding: 7px 20px 7px 20px;
+    border-radius:5px;
+    margin-top: 4vh;
+}
+
+.loginButton:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.loginBox{
+    margin: 4vh 5vw 4vh 5vw;
+    padding: 3vh 2vw 3vh 2vw;
+    text-align: center;
+    border: 2px dashed white;
 }

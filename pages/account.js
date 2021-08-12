@@ -4,6 +4,7 @@ import Link from 'next/link'
 import AuthContext from '../context/AuthContext'
 import { api_url } from '../utils/getApiUrl'
 import { currencyFormat } from '../utils/currencyFormat'
+import styles from '../styles/Account.module.css'
 
 const useOrders = (user, getToken) => {
     const [orders, setOrders] = useState([])
@@ -38,10 +39,18 @@ const useOrders = (user, getToken) => {
 
 const Account = () => {
     
-    const {user, logoutUser, getToken } = useContext(AuthContext)
-
+    const { user, logoutUser, getToken } = useContext(AuthContext)
     const { orders, loading } = useOrders(user, getToken)
+    const [net, setNet ] = useState(0)
     console.log("Account page - ", orders)
+
+    useEffect(()=>{
+        let temp = 0;
+        orders.forEach(order => {
+            temp+=order.total
+        })
+        setNet(temp)
+    }, [orders])
 
     if(!user){
         return (
@@ -58,7 +67,12 @@ const Account = () => {
             </Head>
 
             <h1>Account Page</h1>
+            <hr></hr>
+            <p>{user.email}</p>
+            <a href="#" onClick={logoutUser} className={styles.logout}>Log Out</a>
+            <hr></hr>
             <h2>Your Orders</h2>
+            <hr></hr>
             {loading && <p>Loading your orders!</p>}
             {
                 orders.map(order => (
@@ -67,8 +81,7 @@ const Account = () => {
                     </div>
                 ))
             }
-            <p>Logged in as: {user.email}</p>
-            <a href="#" onClick={logoutUser}>Log Out</a>
+            <p> Total: {currencyFormat(net)}</p>
         </div>
     )
 }
