@@ -34,8 +34,6 @@ export default function Home({ dishes }) {
 
   return (
     <div className={styles.main}>
-      <h1 className={styles.heading}>Our Menu</h1>
-      <hr></hr>
       <div className={styles.inputBox}>
         <input type="text" placeholder="Search By Name" onChange={event => {setSearchName(event.target.value)}} />
         
@@ -53,7 +51,6 @@ export default function Home({ dishes }) {
               ))}
         </select>
       </div>
-      <hr></hr>
       <div className={styles.dishes}>
       {dishes.filter((dish) => {
         let nameFlag = 0;
